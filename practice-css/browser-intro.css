@@ -9,16 +9,14 @@ p.info {
 
 h1 {
 	color:white;
-	text-shadow:navy;
-	background-color: #7f7fcf;
+	text-shadow: navy 1px 0 10px;
 }
 
 h2 {
-	border: solid 1px black;
 	margin: 5px;
 	font-family: cursive;
 	color:#3f3faf;
-	background:linear-gradient(.25turn, white, 10%,#ffefaf);
+	background: linear-gradient(135deg, white 10%, #ffefaf);
 }
 
 div#zentai {
