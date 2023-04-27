@@ -1,0 +1,21 @@
+*{
+    background-color:bisque;
+}
+h1 {
+    border:5px solid rgb(49, 113, 172);
+    text-shadow: red 1px 0 10px;
+}
+div#gurume {
+    display: grid;
+	grid-template-columns:1fr 1fr;
+	grid-auto-rows: 300px 300px;
+	grid-gap: 7px;
+	padding:5px;
+}
+div#gurume > div {
+    box-shadow:blueviolet 0px 0 10px;
+    
+}
+h2 {
+    text-shadow: aqua 1px 0 10px;
+}
