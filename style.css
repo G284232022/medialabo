@@ -3,8 +3,8 @@
     color:aliceblue;
 }
 h1 {
-    box-shadow:black 0px 0 10px;
-    text-shadow: navy 1px 0 10px
+    box-decoration-break: clone;-webkit-box-decoration-break: clone;box-shadow: 8px 8px 10px 0 #ff1492, -5px -5px 5px 0 #00f, 5px 5px 15px 0 ;
+    text-shadow: navy 1px 0 10px;
 }
 h2 {
     text-shadow: aqua 1px 0 10px
@@ -17,7 +17,7 @@ div#maeoki {
 	grid-template-columns:1fr 1fr;
 	grid-auto-rows: 300px 300px;
 	grid-gap: 7px;
-	padding:10px;
+	padding:5px;
 }
 div#maeoki > div{
     box-shadow:black 0px 0 10px;
