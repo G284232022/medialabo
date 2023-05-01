@@ -11,7 +11,7 @@ h2 {
     text-shadow: aqua 1px 0 10px
 }
 h3 {
-    text-shadow:rgb(207, 70, 207) 1px 0 10px
+    text-shadow:rgb(207, 70, 207) 1px 0 10px;
 }
 div#naiyou1 {
     display: grid;
