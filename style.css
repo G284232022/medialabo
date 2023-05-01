@@ -3,11 +3,11 @@
     color:aliceblue;
 }
 h1 {
-    border:5px solid rgb(126, 169, 126);
+    box-shadow:black 0px 0 10px;
     text-shadow: navy 1px 0 10px
 }
 h2 {
-    border:3px solid rgb(126, 169, 126);
+    box-shadow:black 0px 0 10px;
     text-shadow: aqua 1px 0 10px
 }
 h3 {
