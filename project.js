@@ -200,8 +200,13 @@ let data = {
   };
   
   /////////// 課題3-2 ここからプログラムを書こう
+  let a = document.querySelector('div#gurume');
+  let b = document.createElement('p');
+  let c = document.createElement('p');
   let m = data.results;
-  for (let n of m.shop) {
-    console.log(n.address);
-    console.log(n.name);
-  }
+    for (let n of m.shop) {
+      b.textContent = n.address;
+      c.textContent = n.name;
+      a.insertAdjacentElement('beforeend',b);
+      a.insertAdjacentElement('beforeend',c);
+    } 
