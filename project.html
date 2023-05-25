@@ -7,58 +7,31 @@
     </head>
     <body>
         <h1>グルメ情報</h1>
-        <div id="gurume">
-            <div>
-                <h2>居酒屋</h2>
-            </div>
-            <div>
-                <h2>ダイニングバー・バル</h2>
-            </div>
-            <div>
-                <h2>創作料理</h2>
-            </div>
-            <div>
-                <h2>和食</h2>
-            </div>
-            <div>
-                <h2>洋食</h2>
-            </div>
-            <div>
-                <h2>イタリアン・フレンチ</h2>
-            </div>
-            <div>
-                <h2>中華</h2>
-            </div>
-            <div>
-                <h2>焼肉・ホルモン</h2>
-            </div>
-            <div>
-                <h2>アジア・エスニック料理</h2>
-            </div>
-            <div>
-                <h2>各国料理</h2>
-            </div>
-            <div>
-                <h2>カラオケ・パーティ</h2>
-            </div>
-            <div>
-                <h2>バー・カクテル</h2>
-            </div>
-            <div>
-                <h2>ラーメン</h2>
-            </div>
-            <div>
-                <h2>カフェ・スイーツ</h2>
-            </div>
-            <div>
-                <h2>その他グルメ</h2>
-            </div>
-            <div><h2>お好み焼き・もんじゃ</h2>
-            </div>
-            <div>
-                <h2>韓国料理</h2>
-            </div>
-        </div>
+        <h2>好きなジャンルを選択してください。</h2>
+        <p>
+            <label for="santaro">好きな料理のジャンルを選んでください</label>
+            <select name="santaro" id="santaro">
+            <option value="">料理のジャンル</option>
+            <option value="izakaya">居酒屋</option>
+            <option value="baru">ダイニングパー・バル</option>
+            <option value="sousaku">創作料理</option>
+            <option value="wasyoku">和食</option>
+            <option value="yousyoku">洋食</option>
+            <option value="italy">イタリアン・フレンチ</option>
+            <option value="tyuka">中華</option>
+            <option value="yakiniku">焼肉・ホルモン</option>
+            <option value="asia">アジア・エスニック料理</option>
+            <option value="kakkoku">各国料理</option>
+            <option value="karaoke">カラオケ・パーティー</option>
+            <option value="bar">バー・カクテル</option>
+            <option value="ramen">ラーメン</option>
+            <option value="cafe">カフェ・スイーツ</option>
+            <option value="other">その他のグルメ</option>
+            <option value="monja">お好み焼き・もんじゃ</option>
+            <option value="korea">韓国料理</option>
+            </select>
+        <button id="kensaku">検索</button>
+        <p id="gurume"></p>
         <script src="project.js" defer></script>
     </body>
 </html>

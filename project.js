@@ -99,7 +99,7 @@ let data = {
           },
           "wedding": "大歓迎！ステージ・マイク・音響・映像等、設備充実！！最大200名様まで是非どうぞ★",
           "wifi": "あり"
-        },
+        },///1店舗目
         {
           "access": "ＪＲ八王子駅北口徒歩1分/京王八王子駅徒歩3分",
           "address": "東京都八王子市東町12-14",
@@ -200,7 +200,7 @@ let data = {
   };
   
   /////////// 課題3-2 ここからプログラムを書こう
-  let a = document.querySelector('div#gurume');
+  let a = document.querySelector('p#gurume');
   let b = document.createElement('p');
   let c = document.createElement('p');
   let m = data.results;
@@ -210,3 +210,17 @@ let data = {
       a.insertAdjacentElement('beforeend',b);
       a.insertAdjacentElement('beforeend',c);
     } 
+    let d = document.querySelector('button#kensaku');
+    d.addEventListener('click', showSelectResult);
+    
+function showSelectResult() {
+      let e = document.querySelector('select#santaro');
+      let f = e.selectedIndex;  // idx 番目の option が選択された
+    
+      let g = e.querySelectorAll('option');  // s の子要素 option をすべて検索
+      let h = g.item(f);       // os の idx 番目の要素
+    
+      console.log('選択された ' + f + ' 番目の option の情報:');
+      console.log('  value=' + h.getAttribute('value'));  // id 属性を表示
+      console.log('  textContent='+h.textContent);
+}
