@@ -209,6 +209,7 @@ let data = {
   let m = document.createElement('p');
   let n = document.createElement('p');
   let o = document.createElement('p');
+  let p = document.createElement('p');
   
   let d = document.querySelector('button#kensaku');
   d.addEventListener('click', showSelectResult);
