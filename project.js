@@ -206,6 +206,9 @@ let data = {
   let c = document.createElement('p');
   let k = document.createElement('p');
   let l = document.createElement('p');
+  let m = document.createElement('p');
+  let n = document.createElement('p');
+  let o = document.createElement('p');
   
   let d = document.querySelector('button#kensaku');
   d.addEventListener('click', showSelectResult);
@@ -250,10 +253,16 @@ let data = {
       c.textContent = ("住所: " + a1.address);
       k.textContent = ("アクセス情報: " + a1.access);
       l.textContent = ("キャッチコピー: " + a1.catch);
+      m.textContent = ("クレジットカードの利用: " + a1.card);
+      n.textContent = ("営業日: " + a1.open + "深夜は" + a1.midnight);
+      o.textContent = ("座席数: " + a1.capacity + "席");
       a.insertAdjacentElement('beforeend',b);
       a.insertAdjacentElement('beforeend',c);
       a.insertAdjacentElement('beforeend',k);
       a.insertAdjacentElement('beforeend',l);
+      a.insertAdjacentElement('beforeend',m);
+      a.insertAdjacentElement('beforeend',n);
+      a.insertAdjacentElement('beforeend',o);
     }
   }
   function showError(err) {
