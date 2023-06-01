@@ -14,8 +14,8 @@ h3 {
 }
 div#maeoki {
     display: grid;
-	grid-template-columns:1fr 1fr;
-	grid-auto-rows: 400px 400px;
+	grid-template-columns:1fr;
+	grid-auto-rows: 300px;
 	grid-gap: 7px;
 	padding:5px;
 }
@@ -30,7 +30,8 @@ div#naiyou1 {
 	padding:5px;
 }
 div#naiyou1 > div {
-    box-shadow:rgb(255, 0, 0) 0px 0 10px
+    box-shadow:rgb(255, 0, 0) 0px 0 10px;
+    border:solid;
 }
 
 p {

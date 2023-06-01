@@ -200,27 +200,73 @@ let data = {
   };
   
   /////////// 課題3-2 ここからプログラムを書こう
+  let f1;
   let a = document.querySelector('p#gurume');
   let b = document.createElement('p');
   let c = document.createElement('p');
-  let m = data.results;
-    for (let n of m.shop) {
-      b.textContent = n.address;
-      c.textContent = n.name;
-      a.insertAdjacentElement('beforeend',b);
-      a.insertAdjacentElement('beforeend',c);
-    } 
-    let d = document.querySelector('button#kensaku');
-    d.addEventListener('click', showSelectResult);
+  let k = document.createElement('p');
+  let l = document.createElement('p');
+  
+  let d = document.querySelector('button#kensaku');
+  d.addEventListener('click', showSelectResult);
     
-function showSelectResult() {
-      let e = document.querySelector('select#santaro');
-      let f = e.selectedIndex;  // idx 番目の option が選択された
+  function showSelectResult() {
+      let e = document.querySelector('select#gurume');
+      let f = e.selectedIndex;  // e 番目の option が選択された
+      f1 = f;
     
-      let g = e.querySelectorAll('option');  // s の子要素 option をすべて検索
-      let h = g.item(f);       // os の idx 番目の要素
+      let g = e.querySelectorAll('option');  // e の子要素 option をすべて検索
+      let h = g.item(f);       // g の f 番目の要素
     
       console.log('選択された ' + f + ' 番目の option の情報:');
       console.log('  value=' + h.getAttribute('value'));  // id 属性を表示
       console.log('  textContent='+h.textContent);
-}
+  }
+  let i = document.querySelector('button#kensaku');
+  i.addEventListener('click',kekka);
+  function kekka() {
+      let url;
+      let j = 'G0';
+      if (f1<10) {
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + j + '0' + f1 + '.json';
+      }else {
+        url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + j + f1 + '.json';
+      }
+      axios.get(url).then(showResult).catch(showError).then(finish);
+  }
+  function showResult(resp) {
+    let data1 = resp.data;
+    if (typeof data1 === 'string') {
+      data1 = JSON.parse(data1);
+    }
+    let data2 = data1.results;
+    let data3 = data2.shop;
+    console.log(data1);
+    console.log(data2);
+    console.log(data3);
+    for (let a1 of data3) {
+      console.log(a1);
+      b.textContent = ("店舗名: " + a1.name);
+      c.textContent = ("住所: " + a1.address);
+      k.textContent = ("アクセス情報: " + a1.access);
+      l.textContent = ("キャッチコピー: " + a1.catch);
+      a.insertAdjacentElement('beforeend',b);
+      a.insertAdjacentElement('beforeend',c);
+      a.insertAdjacentElement('beforeend',k);
+      a.insertAdjacentElement('beforeend',l);
+    }
+  }
+  function showError(err) {
+    console.log(err);
+  }
+  function finish() {
+    console.log('Ajax 通信が終わりました。');
+  }
+
+
+  /*for (let n of m.shop) {
+    b.textContent = n.address;
+    c.textContent = n.name;
+    a.insertAdjacentElement('beforeend',b);
+    a.insertAdjacentElement('beforeend',c);
+  } */
