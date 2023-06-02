@@ -201,27 +201,26 @@ let data = {
   
   /////////// 課題3-2 ここからプログラムを書こう
   let f1;
+  let f2;
   let a = document.querySelector('p#gurume');
-  let b = document.createElement('p');
-  let c = document.createElement('p');
-  let k = document.createElement('p');
-  let l = document.createElement('p');
-  let m = document.createElement('p');
-  let n = document.createElement('p');
-  let o = document.createElement('p');
-  let p = document.createElement('p');
-  
+  let b = document.createElement('li');
+  let c = document.createElement('li');
+  let k = document.createElement('li');
+  let l = document.createElement('li');
+  let m = document.createElement('li');
+  let n = document.createElement('li');
+  let o = document.createElement('li');
+  let p = document.createElement('li');
+  let q = document.createElement('a');
   let d = document.querySelector('button#kensaku');
-  d.addEventListener('click', showSelectResult);
-    
+  d.addEventListener('click', showSelectResult);  
   function showSelectResult() {
       let e = document.querySelector('select#gurume');
       let f = e.selectedIndex;  // e 番目の option が選択された
       f1 = f;
-    
       let g = e.querySelectorAll('option');  // e の子要素 option をすべて検索
       let h = g.item(f);       // g の f 番目の要素
-    
+      f2 = h;
       console.log('選択された ' + f + ' 番目の option の情報:');
       console.log('  value=' + h.getAttribute('value'));  // id 属性を表示
       console.log('  textContent='+h.textContent);
@@ -248,23 +247,47 @@ let data = {
     console.log(data1);
     console.log(data2);
     console.log(data3);
-    for (let a1 of data3) {
-      console.log(a1);
-      b.textContent = ("店舗名: " + a1.name);
-      c.textContent = ("住所: " + a1.address);
-      k.textContent = ("アクセス情報: " + a1.access);
-      l.textContent = ("キャッチコピー: " + a1.catch);
-      m.textContent = ("クレジットカードの利用: " + a1.card);
-      n.textContent = ("営業日: " + a1.open + "深夜は" + a1.midnight);
-      o.textContent = ("座席数: " + a1.capacity + "席");
-      a.insertAdjacentElement('beforeend',b);
-      a.insertAdjacentElement('beforeend',c);
-      a.insertAdjacentElement('beforeend',k);
-      a.insertAdjacentElement('beforeend',l);
-      a.insertAdjacentElement('beforeend',m);
-      a.insertAdjacentElement('beforeend',n);
-      a.insertAdjacentElement('beforeend',o);
-    }
+    if (data3.length===0) {
+        b.textContent = ('八王子近辺に' + f2.textContent + 'の料理店はありません。他のジャンルを検索してください。');
+        c.textContent = null;
+        k.textContent = null;
+        l.textContent = null;
+        m.textContent = null;
+        n.textContent = null;
+        o.textContent = null;
+        q.textContent = null;
+        a.insertAdjacentElement('beforeend',b);
+        a.insertAdjacentElement('beforeend',c);
+        a.insertAdjacentElement('beforeend',k);
+        a.insertAdjacentElement('beforeend',l);
+        a.insertAdjacentElement('beforeend',m);
+        a.insertAdjacentElement('beforeend',n);
+        a.insertAdjacentElement('beforeend',o);
+        a.insertAdjacentElement('beforeend',q);
+    } else {
+      for (let a1 of data3) {
+        console.log(a1);
+        let a2 = a1.coupon_urls;
+        b.textContent = ("店舗名: " + a1.name);
+        c.textContent = ("住所: " + a1.address);
+        k.textContent = ("アクセス情報: " + a1.access);
+        l.textContent = ("キャッチコピー: " + a1.catch);
+        m.textContent = ("クレジットカードの利用: " + a1.card);
+        n.textContent = ("営業日: " + a1.open + "深夜は" + a1.midnight);
+        o.textContent = ("座席数: " + a1.capacity + "席");
+        q.textContent = '詳細につきましてはこちらをクリックしてください。';
+        q.setAttribute('href',a2.pc);
+        q.setAttribute('target','_blank');
+        a.insertAdjacentElement('beforeend',b);
+        a.insertAdjacentElement('beforeend',c);
+        a.insertAdjacentElement('beforeend',k);
+        a.insertAdjacentElement('beforeend',l);
+        a.insertAdjacentElement('beforeend',m);
+        a.insertAdjacentElement('beforeend',n);
+        a.insertAdjacentElement('beforeend',o);
+        a.insertAdjacentElement('beforeend',q);
+        }
+      }
   }
   function showError(err) {
     console.log(err);
@@ -272,11 +295,3 @@ let data = {
   function finish() {
     console.log('Ajax 通信が終わりました。');
   }
-
-
-  /*for (let n of m.shop) {
-    b.textContent = n.address;
-    c.textContent = n.name;
-    a.insertAdjacentElement('beforeend',b);
-    a.insertAdjacentElement('beforeend',c);
-  } */
