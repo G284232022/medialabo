@@ -4,6 +4,7 @@
 h1 {
     box-decoration-break: clone;-webkit-box-decoration-break: clone;box-shadow: 8px 8px 10px 0 #42c063, -5px -5px 5px 0 rgb(84, 178, 209), 5px 5px 15px 0 ;
     text-shadow: red 1px 0 10px;
+    color:aliceblue;
 }
 p,a {
     text-shadow:red 0px 0 10px;
@@ -11,6 +12,7 @@ p,a {
 }
 h2 {
     text-shadow: aqua 1px 0 10px;
+    color:aliceblue;
 }
 img {
 	float:right;
@@ -25,4 +27,8 @@ a:visited {
 a:hover {
     text-decoration:none;
     text-shadow: purple 1px 0 10px;
+}
+ul {
+    text-shadow: blue 1px 0 10px;
+    color:aliceblue;
 }
