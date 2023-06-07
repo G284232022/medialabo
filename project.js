@@ -275,7 +275,7 @@ let data = {
         m.textContent = ("クレジットカードの利用: " + a1.card);
         n.textContent = ("営業日: " + a1.open + "深夜は" + a1.midnight);
         o.textContent = ("座席数: " + a1.capacity + "席");
-        q.textContent = '詳細につきましてはこちらをクリックしてください。';
+        q.textContent = '詳細につきましてはこちらをクリックしてください。ホットペッパーグルメのページに飛びます。';
         q.setAttribute('href',a2.pc);
         q.setAttribute('target','_blank');
         a.insertAdjacentElement('beforeend',b);
